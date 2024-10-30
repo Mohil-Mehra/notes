@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Create New Note</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet"/>
+</head>
+<body class="flex justify-center items-center min-h-screen bg-[#282828] text-gray-100">
+    <div class="container flex flex-col p-6 w-[30vw] rounded-lg bg-[#3C3C3C] mt-20 shadow-lg">
+        <h1 class="text-3xl font-bold mb-6 text-white">Create New Note</h1>
+        
+        <form action="/new-note" method="post" class="max-w-md">
+            <div class="mb-4">
+                <label for="fileName" class="block text-gray-300 text-sm font-bold mb-2">File Name:</label>
+                <input type="text" id="fileName" name="fileName" required 
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-900 leading-tight focus:outline-none focus:shadow-outline">
+            </div>
+            
+            <div class="mb-6">
+                <label for="noteContent" class="block text-gray-300 text-sm font-bold mb-2">Note Content:</label>
+                <textarea id="noteContent" name="noteContent" rows="6" required
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-900 leading-tight focus:outline-none focus:shadow-outline"></textarea>
+            </div>
+            
+            <div class="flex items-center justify-between">
+                <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                    Create Note
+                </button>
+                <a href="/" class="inline-block align-baseline font-bold text-sm text-blue-400 hover:text-blue-600">
+                    Cancel
+                </a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

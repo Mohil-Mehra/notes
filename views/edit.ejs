@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Edit Note</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet"/>
+</head>
+<body class="flex justify-center  items-center min-h-screen bg-[#282828] text-gray-100">
+    <div class="container flex flex-col p-6 w-[30vw] rounded-lg bg-[#3C3C3C] mt-20 shadow-lg">
+        <h1 class="text-3xl font-bold mb-6 text-white">Edit Note</h1>
+        
+        <form action="/edit/<%= fileName %>" class="flex flex-col gap-4" method="post">
+            <label for="fileName">File Name:</label>
+            <input type="text" class="text-black border-2 border-gray-300 rounded-md p-2" name="newfileName" id="fileName" value="<%= fileName %>">
+        
+            <label for="noteContent">Note Content:</label>
+            <textarea name="noteContent" class="text-black border-2 border-gray-300 rounded-md p-2" id="noteContent" rows="6"><%= noteContent %></textarea>
+        
+            <button type="submit">Save Changes</button>
+        </form>
+        
+        
+        
+    </div>
+</body>
+</html>

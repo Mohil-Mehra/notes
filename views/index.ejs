@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Notes</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet"/>
+</head>
+<body>
+    <div class="main">
+        
+        <div class="nav flex justify-between h-20 items-center bg-red-400">
+            <h1 class="text-2xl ml-10 font-black">
+                <i class="ri-article-fill"></i> NOTES
+            </h1>
+            <a href="/new" class="text-[15px] cursor-pointer bg-blue-400 p-1 pl-2 pr-2 rounded-sm text-white mr-10 font-bold">
+                <i class="ri-add-line"></i> NEW NOTE
+            </a>
+        </div>
+
+      
+        <div>
+            <% files.forEach(file => { %>
+                <div class="card bg-white rounded-lg shadow-md p-4 m-4">
+                    <h2 class="text-xl font-semibold mb-2"><%= file %></h2>
+                    <p class="text-gray-600 mb-2">Date: <span class="currentDate"></span></p>
+                    <a href="/show/<%= file.replace('.txt', '') %>" class="text-blue-500 hover:underline">View More</a>
+                    <a href="/delete/<%= file.replace('.txt', '') %>" class="text-red-500 ml-2 hover:underline">Delete</a>
+                    <a href="/edit/<%= file.replace('.txt', '') %>" class="text-green-500 ml-2 hover:underline">Edit</a>
+
+                </div>
+            <% }) %>
+        </div>
+
+       
+        <script>
+            document.querySelectorAll('.currentDate').forEach(el => {
+                el.textContent = new Date().toLocaleDateString();
+            });
+        </script>
+    </div>
+</body>
+</html>
